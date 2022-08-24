@@ -54,8 +54,8 @@ int main(){
   int arr[15]={1,2,3,4,4,4,4,4,4,4,4,4,4,4,5};
   int firstOcc=firstOccurence(arr,15,4);
   int lastOcc=lastOccurence(arr,15,4);
-  cout<<"First occurence: "<<firstOcc<<endl;
-  cout<<"Last occurence: "<<lastOcc<<endl;
+  cout<<"First occurence : "<<firstOcc<<endl;
+  cout<<"Last occurence : "<<lastOcc<<endl;
 
   return 0;
 }
