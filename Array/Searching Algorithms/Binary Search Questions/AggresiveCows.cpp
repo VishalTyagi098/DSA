@@ -2,6 +2,26 @@
 #include <iostream>
 using namespace std;
 
+// Check if difference between two positions of cows is possible or not
+bool isPossibleSoln(int arr[],int n,int k, int mid){
+  int cowCount=1;
+  // This counter will place other cows on different indices.
+  int lastPos=arr[0];
+
+  for (int i=0;i<n;i++){
+    // Check if difference between two cows placed is equal to mid or not
+    if(arr[i]-lastPos>=mid){ 
+      // This will make another cow.
+      cowCount++;
+      // if cow count is equal to k, then return true because distance is possible and all the cows have been created.
+      if(cowCount==k){
+        return true;
+      }
+      lastPos=arr[i];
+    }  
+  }
+  return false;
+}
 
 int binarySearch(int arr[],int n,int k){
   // Creating search space
