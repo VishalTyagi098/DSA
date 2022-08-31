@@ -4,6 +4,24 @@
 #include <iostream>
 using namespace std;
 
+bool isPossibleSoln(int arr[],int n, int m, int mid){
+  int painterCount=1;
+  int workSum=0;
+  for(int i=0;i<n;i++){
+    if(workSum+arr[i]<=mid){
+      workSum+=arr[i];
+    }
+    else{
+      painterCount++;
+      if(painterCount>m || arr[i]>mid){
+        return false;
+      }
+      workSum=arr[i];
+    }
+  }
+  return true;
+}
+
 int binarySearch(int arr[], int n, int m){
   int s=0;
   int sum=0;
@@ -29,7 +47,7 @@ int binarySearch(int arr[], int n, int m){
 }
 
 int main(){
-  int arr[4]={5,5,5,5};
+  int arr[4]={10,20,30,40};
   cout<<binarySearch(arr,4,2);
   return 0;
 }
