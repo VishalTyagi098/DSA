@@ -5,12 +5,20 @@ void bubbleSort(int arr[],int n){
   // iteration from 0 to n-1
   for(int i=0;i<n;i++){
 
+    // optimised code
+    bool swapped=false;
+
     // iteration from 0 to n-i-1 (because 'i'th round will place 'i'th largest element at its place.So no need to iterate till end of array)
     for(int j=0;j<n-i-1;j++){
 
       if(arr[j]>arr[j+1]){
         swap(arr[j],arr[j+1]);
+        swapped=true;
       }
+    }
+    if(swapped==false){
+      // already sorted
+      break;
     }
   }
 }
