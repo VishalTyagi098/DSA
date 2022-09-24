@@ -19,4 +19,11 @@ int main(){
 
   // empty() function
   cout<<"Array is empty or not: "<<a.empty()<<endl;
+
+  // front () and back() function
+
+  cout<<"First element of array: "<<a.front()<<endl;
+  cout<<"Last element of array: "<<a.back()<<endl;
+
+  return 0;
 }
