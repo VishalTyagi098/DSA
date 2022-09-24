@@ -24,6 +24,15 @@ int main(){
   }
   cout<<endl;
 
+  // at(),front(),back(),empty() functions are same
+
+  // erase() function
+
+  d.erase(d.begin(),d.begin()+1);
+  for(int i=0;i<d.size();i++){
+    cout<<d[i]<<" ";
+  }
+  cout<<endl;
 
   return 0;
 }
