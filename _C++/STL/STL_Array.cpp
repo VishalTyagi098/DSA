@@ -13,4 +13,8 @@ int main(){
   for (int i=0;i<size;i++){
     cout<<a[i]<<endl;
   }
+
+  // at() function 
+  cout<<"Element present at index 2: "<<a.at(2)<<endl;
+
 }
