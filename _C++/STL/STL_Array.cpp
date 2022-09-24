@@ -17,4 +17,6 @@ int main(){
   // at() function 
   cout<<"Element present at index 2: "<<a.at(2)<<endl;
 
+  // empty() function
+  cout<<"Array is empty or not: "<<a.empty()<<endl;
 }
