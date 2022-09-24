@@ -21,5 +21,21 @@ int main(){
   cout<<"First element: "<<v.front()<<endl;
   cout<<"Last element: "<<v.back()<<endl;
 
+  //  pop_back() function
+
+  cout<<"Before pop"<<endl;
+  for(int i=0;i<v.size();i++){
+    cout<<v[i]<<" ";
+  }
+
+  cout<<endl;
+  v.pop_back();
+
+  cout<<"After pop"<<endl;
+  for(int i=0;i<v.size();i++){
+    cout<<v[i]<<" ";
+  }
+
+
   return 0;
 }
