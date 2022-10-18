@@ -19,16 +19,18 @@ void insertAtHead(struct Node* &head,int new_data){
     ptr=ptr->next;
   }
 
-  
+  new_node->next=head;
+  ptr->next=new_node;
+  head=new_node;
 }
 
 void printLL(struct Node* &head){
   struct Node* ptr=head;
-  cout<<ptr->data;
+  cout<<ptr->data<<" ";
   while(ptr->next!=head){
-    cout<<ptr->data<<" ";
     ptr=ptr->next;
-  }
+    cout<<ptr->data<<" ";
+  }cout<<endl;
 }
  
 int main()
@@ -38,5 +40,15 @@ int main()
   node1->next=node1;
 
   printLL(node1);
+
+  insertAtHead(node1,20);
+  printLL(node1);
+
+  insertAtHead(node1,30);
+  printLL(node1);
+
+  insertAtHead(node1,40);
+  printLL(node1);
+
     return 0;
 }
