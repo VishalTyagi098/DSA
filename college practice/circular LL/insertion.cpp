@@ -24,6 +24,21 @@ void insertAtHead(struct Node* &head,int new_data){
   head=new_node;
 }
 
+void insertAtTail(struct Node* &head,int new_data){
+  struct Node* new_node=(struct Node*)malloc(sizeof(struct Node));
+  new_node->data=new_data;
+  new_node->next=NULL;
+
+  struct Node* ptr=head;
+
+  while(ptr->next!=head){
+    ptr=ptr->next;
+  }
+
+  ptr->next=new_node;
+  new_node->next=head;
+}
+
 void printLL(struct Node* &head){
   struct Node* ptr=head;
   cout<<ptr->data<<" ";
@@ -48,6 +63,12 @@ int main()
   printLL(node1);
 
   insertAtHead(node1,40);
+  printLL(node1);
+
+  insertAtTail(node1,50);
+  printLL(node1);
+
+  insertAtTail(node1,60);
   printLL(node1);
 
     return 0;
