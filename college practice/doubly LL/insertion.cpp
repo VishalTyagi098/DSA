@@ -5,8 +5,8 @@ using namespace std;
  
 struct Node{
   int data;
-  Node* prev;
-  Node* next;
+  struct Node* prev;
+  struct Node* next;
 };
 
 void insertAtHead(struct Node* &head,int new_data){
@@ -86,6 +86,7 @@ int main()
   node1->data=10;
   node1->prev=NULL;
   node1->next=NULL;
+  
   struct Node* head=node1;
 
 
