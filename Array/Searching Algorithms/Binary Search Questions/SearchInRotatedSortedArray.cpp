@@ -41,14 +41,14 @@ int binarySearch(int arr[],int n,int start,int end,int key){
 }
 
 int main(){
-  int arr[6]={7,8,1,2,3};
-  int key=2;
+  int arr[6]={7,8,1,2,3,4};
+  int key=4;
 
   int pivot = pivotElement(arr,6);
 
   // conditions for searching in rotated sorted array
 
-  if(key>=pivot){
+  if(key>=arr[pivot] && key<=arr[6-1]){
     cout<<binarySearch(arr,6,pivot,6-1,key);
   }
   else{
