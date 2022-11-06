@@ -41,6 +41,8 @@ Node* buildTree(struct Node* root){
   return root;
 }
 
+
+// IN order traversal
 void inOrderTraversal(Node* root){
   if(root==NULL){
     return;
@@ -58,7 +60,7 @@ int main()
   root=buildTree(root);
   
   // 1 2 -1 -1 3 -1 -1
-  
+
   inOrderTraversal(root);
   
   return 0;
