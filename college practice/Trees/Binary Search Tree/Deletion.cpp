@@ -58,7 +58,70 @@ Node* inputTree(struct Node* &root){
 
 
 // max and min function
+Node* minValue(struct Node* root){
+  struct Node* temp=root;
+  while(temp->left!=NULL){
+    temp=temp->left;
+  }
+  return temp;
+}
+Node* maxValue(struct Node* root){
+  struct Node* temp=root;
+  while(temp->right!=NULL){
+    temp=temp->right;
+  }
+  return temp;
+}
 
+
+// deletion
+Node* deleteInBST(struct Node* root,int key){
+  // base case
+  if(root==NULL){
+    return root;
+  }
+
+  // conditions
+  if(root->data==key){
+    // 0 child :-
+    if(root->left==NULL && root->right==NULL){
+      free(root);
+      return NULL;
+    }
+
+    // 1 child:-
+      // left child
+    if(root->left!= NULL && root->right == NULL){
+      struct Node* temp=root->left;
+      free(root);
+      return temp;
+    }
+      // right child
+    if(root->left== NULL && root->right != NULL){
+      struct Node* temp=root->right;
+      free(root);
+      return temp;
+    }
+
+
+    // 2 children:-
+    if(root->left!=NULL && root->right!=NULL){
+      int mini=minValue(root->right)->data;
+      root->data=mini;
+      root->right=deleteInBST(root->right,mini);
+      return root;
+    }
+  }
+
+  else if(key<root->data){
+    root->left=deleteInBST(root->left,key);
+    return root;
+  }
+  else {
+    root->right=deleteInBST(root->right,key);
+    return root;
+  }
+}
  
 int main()
 {
@@ -67,6 +130,13 @@ int main()
   cout<<"input data:"<<endl;
   root=inputTree(root);
   
+  inOrderTraversal(root);
+  cout<<endl<<minValue(root)->data;
+  cout<<endl<<maxValue(root)->data;
+
+  cout<<endl;
+  cout<<endl;
+  deleteInBST(root,2);
   inOrderTraversal(root);
     return 0;
 }
