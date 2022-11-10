@@ -68,6 +68,23 @@ bool searchInBST(struct Node* root, int key){
     return searchInBST(root->right,key);
   }
 }
+
+// optimised searching code using iterative method ( space complexity O(1) )
+bool optimisedSearchInBST(struct Node* root,int key){
+  struct Node* temp=root;
+  while(temp!=NULL){
+    if(key==temp->data){
+      return true;
+    }
+    if(key< temp->data){
+      temp=temp->left;
+    }
+    else{
+      temp=temp->right;
+    }
+  }
+  return false;
+}
  
 int main()
 {
@@ -76,7 +93,7 @@ int main()
   inputData(root);
   inOrderTraversal(root);
 
-  if(searchInBST(root,4)){
+  if(optimisedSearchInBST(root,4)){
     cout<<"True";
   }
   else{
