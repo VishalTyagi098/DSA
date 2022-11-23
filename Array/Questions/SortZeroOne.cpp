@@ -21,7 +21,6 @@ void SortZeroOne(int arr[],int n){
 
 void newSortZero(int arr[],int n){
   int i=0;
-  // Technically arr[i] will always stay on 0 after i++;
   for(int j=0;j<n;j++){
     if(arr[j]!=0){
       swap(arr[i],arr[j]);
