@@ -37,6 +37,49 @@ void inputData(struct Node* &root){
     cin>>data;
   }
 }
+
+Node* deletionInBST(struct Node* root,int key){
+  // base cases
+  if(root==NULL){
+    return root;
+  }
+
+  // conditions
+  if(root->data==key){
+    // 0 child
+    if(root->left==NULL && root->right==NULL){
+      free(root);
+      return NULL;
+    }
+    // 1 Child
+    if(root->left==NULL && root->right != NULL){
+      struct Node* temp=root->right;
+      free(root);
+      return temp;
+    }
+    if(root->left!=NULL && root->right == NULL){
+      struct Node* temp=root->left;
+      free(root);
+      return temp;
+    }
+
+    // 2 children
+    if(root->left!=NULL && root->right != NULL){
+      int maxi=max(root->left)->data;
+      root->data=maxi;
+      root->left=deleteInBST(root->left,key);
+      return root;
+    }
+  }
+
+  // base cases
+  else if(root->data>key){
+    root->left=deletionInBST(root->left,key);
+  }
+  else{
+    root->right=deletionInBST(root->right,key);
+  }
+}
  
 int main()
 {
