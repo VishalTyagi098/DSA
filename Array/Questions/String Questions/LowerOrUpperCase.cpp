@@ -2,7 +2,7 @@
 using namespace std;
  
 char toLowerCase(char ch){
-  if(ch>='a'&&ch<='b'){
+  if(ch>='a'&&ch<='z'){
     return ch;
   }
   else{
@@ -12,7 +12,7 @@ char toLowerCase(char ch){
   }
 }
 char toUpperCase(char ch){
-  if(ch>='A'&&ch<='B'){
+  if(ch>='A'&&ch<='Z'){
     return ch;
   }
   else{
