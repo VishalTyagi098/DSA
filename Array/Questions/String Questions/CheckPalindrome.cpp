@@ -10,11 +10,23 @@ char toLowerCase(char ch){
   }
 }
 
+string removeSpecialCharacters(string s){
+  string new_s;
+  for(int i=0;s[i]!='\0';i++){
+    if(s[i]>='a'&&s[i]<='b' || s[i]>='A'&&s[i]<='Z' || s[i]>=0&&s[i]<=9){
+      new_s=new_s + s[i];
+    }
+  }
+  return new_s;
+}
+
 int checkPalindrome(string s){
+  s=removeSpecialCharacters(s);
   int i=0;
   int j=s.length()-1;
 
   while(i<=j){
+    
     if(toLowerCase(s[i])!=toLowerCase(s[j])){
       return 0;
     }
@@ -29,7 +41,9 @@ int checkPalindrome(string s){
  
 int main()
 {
-  string s="abcba";
-  cout<<checkPalindrome(s);
+  string s="c1 0$d@eeD o1c";
+  cout<<checkPalindrome(s)<<endl;
+  string s1="abcba";
+  cout<<checkPalindrome(s1);
     return 0;
 }
