@@ -20,7 +20,7 @@ string removeSpecialCharacters(string s){
   return new_s;
 }
 
-int checkPalindrome(string s){
+int checkValidPalindrome(string s){
   s=removeSpecialCharacters(s);
   int i=0;
   int j=s.length()-1;
@@ -42,7 +42,7 @@ int checkPalindrome(string s){
 int main()
 {
   string s="c1 0$d@eeD o1c";
-  cout<<checkPalindrome(s)<<endl;
+  cout<<checkValidPalindrome(s)<<endl;
   string s1="abcba";
   cout<<checkPalindrome(s1);
     return 0;
