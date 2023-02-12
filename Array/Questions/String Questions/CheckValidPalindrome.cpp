@@ -44,6 +44,6 @@ int main()
   string s="c1 0$d@eeD o1c";
   cout<<checkValidPalindrome(s)<<endl;
   string s1="abcba";
-  cout<<checkPalindrome(s1);
+  cout<<checkValidPalindrome(s1);
     return 0;
 }
